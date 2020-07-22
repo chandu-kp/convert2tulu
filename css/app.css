@@ -36,19 +36,22 @@ textarea:focus {
     width: 90%;
 }
 
-.tulutxtcontainer {
+.tuluTxtContainer {
     -webkit-box-shadow: 0 10px 6px -6px #777;
     -moz-box-shadow: 0 10px 6px -6px #777;
     box-shadow: 0 10px 6px -6px #777;
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
 }
 
-.tulutxtcontainer::after {
+.tuluTxtContainer::after {
     content: "";
     display: table;
     clear: both;
 }
 
-.tulutxt {
+.tuluTxt {
     font-family: tulusrifont;
     word-break: break-word;
     white-space: pre-wrap;
@@ -61,17 +64,17 @@ textarea:focus {
     padding: 2px;
 }
 
-.originaltxt {
+.originalTxt {
     height: 200px;
 }
 
 .watermark {
     opacity: 0.5;
-    color: rgb(220, 220, 228);
+    color: whitesmoke;
     bottom: 0;
     right: 0;
     padding: 2px;
-    background-color: rgba(13, 129, 230, 0);
+    text-shadow: 1px 1px 1px black;
 }
 
 .download, .settings {

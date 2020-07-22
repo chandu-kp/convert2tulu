@@ -13,8 +13,8 @@
 
 <body>
     <div class="container">
-        <div class="row center">
-            <h3> Convert </h3>
+        <div class="row center white-text">
+            <h3> Convert to Tulu </h3>
             <span>
                 <a class="btn waves-effect waves-light blue lighten-2" target="_blank"
                     href="https://github.com/kchandrahasa/convert2tulu">
@@ -28,21 +28,21 @@
             </span>
         </div>
         <div class="row">
-            <div class="col s12 l8">
+            <div class="col s12 l7">
                 <div class="card">
                     <div class="card-content">
-                        <div class="tulutxtcontainer">
-                            <div id="tulutxt" class="tulutxt"></div>
-                            <div class="watermark right"> Visit: https://convert2tulu.netlify.com </div>
+                        <div class="tuluTxtContainer">
+                            <div id="tuluTxt" class="tuluTxt"></div>
+                            <div class="watermark right"> Visit: https://convert2tulu.netlify.com :) </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col s12 l4">
+            <div class="col s12 l5">
                 <div class="card">
                     <div class="card-content">
                         <div class="row">
-                            <textarea id="originaltxt" class="originaltxt" rows="20" cols="5" placeholder="Write here!"
+                            <textarea id="originalTxt" class="originalTxt" rows="20" cols="5"
                                 autofocus>
                             </textarea>
                         </div>
@@ -58,63 +58,56 @@
                         <div class="row">
                             <ul class="collapsible">
                                 <li>
-                                    <div class="collapsible-body">
-
-                                        <!-- 
-                                        Fill Color
-                                        Shadow Color
-                                        Font Size
-                                        Background Color
-                                        Background Image upload
-                                        Font
-                                    -->
-                                        <div class="row">
-                                            <div class="input-field col s6 l4">
-                                                <label for="fillcolor">Fill Color</label>
+                                    <div class="row collapsible-body">
+                                        <div class="row col s12">
+                                            <div class="col s2">
+                                                <label>
+                                                    <i class="material-icons">format_color_text</i>
+                                                </label>
+                                            </div>
+                                            <div class="col s4">
                                                 <input class="form-control" type="color"
-                                                    value="${options[index].fillColor}" id="fillcolor"
-                                                    title="Fill Color">
+                                                    value="${options[index].fillColor}" id="fontColor"
+                                                    title="Font Color"></input>
                                             </div>
-                                            <div class="input-field col s6 l4">
-                                                <label for="shadowcolor">Shadow Color</label>
+                                            <div class="col s4">
                                                 <input class="form-control" type="color"
-                                                    value="${options[index].shadowColor}" data-input="shadowColor"
-                                                    id="shadowcolor" title="Shadow Color">
+                                                    value="${options[index].shadowColor}" 
+                                                    id="shadowColor" title="Shadow Color"></input>
                                             </div>
-                                            <div class="input-field col s6 l4">
-                                                <label for="shadowcolor">Text Size</label>
-                                                <input type="range" min="15" max="100" value="15" step="2"/>
-                                            </div>
-
-                                            <div class="input-field col s6 l4">
-                                                <select class="browser-default">
-                                                    <option value="tulusrifont" selected>Tulusri</option>
-                                                    <option value="2">Option 2</option>
-                                                    <option value="3">Option 3</option>
-                                                </select>
-                                                <label>Choose Font</label>
-                                            </div>
-
                                         </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s6 l6">
-                                                <label for="fillcolor">Fill Color</label>
-                                                <input class="form-control" type="color"
-                                                    value="${options[index].fillColor}" id="fillcolor"
-                                                    title="Fill Color">
-                                                <span>Or</span>
+                                        <div class="row col s12">
+                                            <div class="col s2">
+                                                <label>
+                                                    <i class="material-icons">format_size</i>
+                                                </label>
                                             </div>
-
-                                            <div class="file-field input-field col s6 l6">
+                                            <div class="col s10 range-field">
+                                                <input id="fontSize" type="range" min="0" max="200" value="15"
+                                                    step="2"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row col s12">
+                                            <div class="col s2">
+                                                <label>
+                                                    <i class="material-icons">format_color_fill</i>
+                                                </label>
+                                            </div>
+                                            <div class="col s3">
+                                                <input class="form-control" type="color"
+                                                    value="${options[index].fillColor}" id="backgroundColor"
+                                                    title="Background Color">
+                                            </div>
+                                            <div class="col s2">
+                                                <label>OR</label>
+                                            </div>
+                                            <div class="col s4 file-field">
                                                 <a class="btn-small waves-effect waves-light blue" id="upload">
                                                     <i class="material-icons">cloud_upload</i>
-                                                    <span>Upload Image</span>
-                                                    <input type="file" id="file_input">
+                                                    <span>Upload</span>
+                                                    <input type="file" id="fileInput" style="width:100%">
                                                 </a>
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
+                                                <input class="file-path validate" type="hidden">
                                             </div>
                                         </div>
                                     </div>

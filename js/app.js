@@ -1,14 +1,13 @@
-$('#originaltxt').on('keyup', function(e) {
-    var tulutxtdiv = document.getElementById("tulutxt");
-    tulutxtdiv.innerHTML = convertWithEscape($(this).val(), '#');
-    if (tulutxtdiv.scrollHeight > 300) {
-        tulutxtdiv.style.height = tulutxtdiv.scrollHeight + 'px';
+$('#originalTxt').on('keyup', function(e) {
+    var tuluTxtDiv = document.getElementById("tuluTxt");
+    tuluTxtDiv.innerHTML = convertWithEscape($(this).val(), '#');
+    if (tuluTxtDiv.scrollHeight > 300) {
+        tuluTxtDiv.style.height = tuluTxtDiv.scrollHeight + 'px';
     }
 });
 
 $('#download').on('click', function(e) {
-    domtoimage.toPng(document.querySelector('.tulutxtcontainer'), {
-    //domtoimage.toPng(document.getElementById('tulutxt'), {
+    domtoimage.toPng(document.querySelector('.tuluTxtContainer'), {
             quality: 1.0
     }).then(function (dataUrl) {
         saveAs(dataUrl, 'intulu.png');
@@ -25,8 +24,26 @@ $('#settings').on('click', function(e) {
     $('.collapsible').toggleClass('active');
 });
 
-$('#fillColor').on('change', function(e) {
-    console.log('cc');
+$('#fontColor').on('input', function(e) {
+    document.getElementById("tuluTxt").style.color = $(this).val();
+});
+
+$('#shadowColor').on('input', function(e) {
+    document.getElementById("tuluTxt").style.textShadow = '3px 3px 3px ' + $(this).val();
+});
+
+$('#fontSize').on('input', function(e) {
+    document.getElementById("tuluTxt").style.fontSize = $(this).val()+'px';
+});
+
+$('#backgroundColor').on('input', function(e) {
+    document.querySelector('.tuluTxtContainer').style.backgroundColor = $(this).val();
+});
+
+$("#fileInput").on('change', function(e) {
+    var URL = window.webkitURL || window.URL;
+    var url = URL.createObjectURL(e.target.files[0]);
+    document.querySelector('.tuluTxtContainer').style.backgroundImage = "url(" + url + ")";
 });
 
 function saveAs(uri, filename) {

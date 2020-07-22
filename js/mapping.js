@@ -123,7 +123,6 @@ const k_m_mapping = {
     ...k_m_virama_mapping,
     ...k_m_additional_vowels_mapping,
     ...k_m_dependent_vowels_mapping,
-    ...k_m_chillu_latters_mapping,
     ...k_m_digits_mapping
 }
 
