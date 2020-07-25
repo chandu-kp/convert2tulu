@@ -7,9 +7,24 @@ $('#originalTxt').on('keyup', function(e) {
 });
 
 $('#download').on('click', function(e) {
-    domtoimage.toPng(document.querySelector('.tuluTxtContainer'), {
-            quality: 1.0
-    }).then(function (dataUrl) {
+    let node = document.querySelector('.tuluTxtContainer');
+    const scale = 1.5
+
+    const style = {
+        transform: 'scale(' + scale + ')',
+        transformOrigin: 'top left',
+        width: node.offsetWidth + 'px',
+        height: node.offsetHeight + 'px'
+    }
+
+    const params = {
+        height: node.offsetHeight * scale,
+        width: node.offsetWidth * scale,
+        quality: 1,
+        style
+    }
+    
+    domtoimage.toPng(node, params).then(function (dataUrl) {
         saveAs(dataUrl, 'intulu.png');
     });
 });
