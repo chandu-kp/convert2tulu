@@ -42,7 +42,8 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="row">
-                            <textarea id="originalTxt" class="originalTxt" rows="20" cols="5" placeholder="Write in Kannada or paste Kannada text here!" autofocus></textarea>
+                            <textarea id="originalTxt" class="originalTxt" rows="20" cols="5"
+                                placeholder="Write in Kannada or paste Kannada text here!" autofocus></textarea>
                         </div>
                         <div class="row">
                             <a class="btn-small waves-effect waves-light blue left download" id="download">
@@ -70,8 +71,8 @@
                                             </div>
                                             <div class="col s4">
                                                 <input class="form-control" type="color"
-                                                    value="${options[index].shadowColor}" 
-                                                    id="shadowColor" title="Shadow Color"></input>
+                                                    value="${options[index].shadowColor}" id="shadowColor"
+                                                    title="Shadow Color"></input>
                                             </div>
                                         </div>
                                         <div class="row col s12">
@@ -80,9 +81,15 @@
                                                     <i class="material-icons">format_size</i>
                                                 </label>
                                             </div>
-                                            <div class="col s10 range-field">
+                                            <div class="col s7 range-field">
                                                 <input id="fontSize" type="range" min="0" max="200" value="15"
                                                     step="2"></input>
+                                            </div>
+                                            <div class="col s3">
+                                                <label>
+                                                    <input id="fontWeight" type="checkbox" class="filled-in"></input>
+                                                    <span><i class="material-icons">format_bold</i></span>
+                                                </label>
                                             </div>
                                         </div>
                                         <div class="row col s12">

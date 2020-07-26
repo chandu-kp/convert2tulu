@@ -51,6 +51,14 @@ $('#fontSize').on('input', function(e) {
     document.getElementById("tuluTxt").style.fontSize = $(this).val()+'px';
 });
 
+$('#fontWeight').on('input', function(e) {
+    if ($(this).prop('checked') == true){
+        document.getElementById("tuluTxt").style.fontWeight = 'bold';
+    } else {
+        document.getElementById("tuluTxt").style.fontWeight = 'normal';
+    } 
+});
+
 $('#backgroundColor').on('input', function(e) {
     document.querySelector('.tuluTxtContainer').style.backgroundColor = $(this).val();
 });

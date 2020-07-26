@@ -57,6 +57,7 @@ textarea {
     font-size: 15px;
     font-weight: normal;
     padding: 2px;
+    line-height: 110%;
 }
 
 .originalTxt {
