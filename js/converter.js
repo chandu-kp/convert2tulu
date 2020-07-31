@@ -24,7 +24,7 @@ function convertWithEscape(txt, escapeChar) {
 
         // fix for chillu letters between kannada and malayalam letters
         if ((letterToConvert in k_m_virama_mapping) && doMap === true) {
-            if ((txt[i - 1] in k_m_chillu_latters_mapping) && isNotEndOfWord(txt, i)) {
+            if ((txt[i - 1] in k_m_chillu_latters_mapping) && !isAscii(txt, i)) {
                 //remove the letter and replace with corresponding chillu letter 
                 convertedWord.pop();
                 letterToConvert = k_m_chillu_latters_mapping[txt[i - 1]];
@@ -40,9 +40,6 @@ function convertWithEscape(txt, escapeChar) {
     return convertedWord.join('');
 }
 
-function isNotEndOfWord(txt, currentIndex) {
-    return (txt[currentIndex+1] != ' ' 
-            && txt[currentIndex+1] != '\n'
-            && txt[currentIndex+1] != '\r'
-            && txt[currentIndex+1] != '\r\n');
+function isAscii(txt, currentIndex) {
+    return (/^[\x00-\x7F]+$/.test(txt[currentIndex+1]));
 }
